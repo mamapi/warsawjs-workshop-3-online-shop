@@ -1,9 +1,15 @@
 (function () {
     'use strict';
 
-    class PageHeader {
-        template() {
-            return `
+    class PageHeaderComponent {
+        onQueryUpdate($event) {
+            this.setQuery({ $event });
+        }
+    }
+
+    angular.module('shop')
+        .component('pageHeader', {
+            template: `
                 <header>
                     <nav class="blue lighten-3">
                         <div class="nav-wrapper">
@@ -13,12 +19,12 @@
                         </div>
                     </nav>
         
-                    <product-search></product-search>
+                    <product-search on-query-update="$ctrl.onQueryUpdate($event)"></product-search>
                 </header>
-            `;
-        }
-    }
-
-    angular.module('shop')
-        .component('pageHeader', new PageHeader)
+            `,
+            bindings: {
+                setQuery: '&onQueryUpdate'
+            },
+            controller: PageHeaderComponent
+        })
 }());

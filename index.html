@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link href="styles/main.css" rel="stylesheet" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
 
     <script src="scripts/modules/shop-module.js"></script>
     <script src="scripts/services/cart.js"></script>
@@ -24,18 +24,9 @@
     <script src="scripts/components/product-list-component.js"></script>
     <script src="scripts/components/product-search-component.js"></script>
     <script src="scripts/setup.js"></script>
+    <script src="scripts/components/app-component.js"></script>
 </head>
 <body>
-    <section class="container">
-        <page-header></page-header>
-
-        <product-list class="row">
-            <div class="progress">
-                <div class="indeterminate"></div>
-            </div>
-        </product-list>
-
-        <page-footer></page-footer>
-    </section>
+    <app></app>
 </body>
 </html>

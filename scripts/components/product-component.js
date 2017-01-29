@@ -1,19 +1,15 @@
 (function () {
     'use strict';
 
-    class ProductComponent {
-        constructor() {
-            this.bindings = {
-                productIndex: '='
-            };
-            this.require = {
-                productList: '^^'
-            };
-            this.controller = ProductComponentController;
+    class ProductComponentController {
+        $onInit() {
+            this.product = this.productList.getProductByIndex(this.productIndex);
         }
+    }
 
-        template() {
-            return `
+    angular.module('shop')
+        .component('product', {
+            template: `
                 <div class="card small blue-grey darken-1">
                     <div class="card-content white-text">
                         <h6 class="card-title">{{ $ctrl.product.name }}</h6>
@@ -23,21 +19,13 @@
                         <product-add-to-cart></product-add-to-cart>
                     </div>
                 </div>
-            `;
-        }
-    }
-
-    class ProductComponentController {
-        constructor() {
-            // console.debug('new ProductComponentController');
-            this.product = null;
-        }
-
-        $onInit() {
-            this.product = this.productList.getProductByIndex(this.productIndex);
-        }
-    }
-
-    angular.module('shop')
-        .component('product', new ProductComponent);
+            `,
+            bindings: {
+                productIndex: '='
+            },
+            require: {
+                productList: '^^'
+            },
+            controller: ProductComponentController
+        });
 }());

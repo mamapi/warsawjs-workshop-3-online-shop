@@ -1,45 +1,6 @@
 (function () {
     'use strict';
 
-    class CartDropdown {
-        constructor() {
-            this.controller = CartDropdownController;
-        }
-
-        template() {
-            return `
-                <ul class="right">
-                    <li>
-                        <a class="dropdown-button" href="">
-                            Koszyk ({{ $ctrl.getCartSize() }})
-                            <i class="material-icons right">arrow_drop_down</i>
-                        </a>
-                                
-                        <ul id="cart-dropdown-list" class="dropdown-content">
-                            <li ng-repeat="item in $ctrl.cart">
-                                <a href="">
-                                    {{ item.product.name }}
-                                    <span class="badge right">
-                                        {{ item.quantity }}x
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a 
-                                        href=""
-                                        ng-click="$ctrl.clearCart()"
-                                    >
-                                    Wyczyść koszyk
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            `;
-        }
-    }
-
     class CartDropdownController {
         constructor(CartService) {
             this.CartService = CartService;
@@ -60,5 +21,32 @@
     }
 
     angular.module('shop')
-        .component('cartDropdown', new CartDropdown)
+        .component('cartDropdown', {
+            template: `
+                <ul class="right">
+                    <li>
+                        <a class="dropdown-button" href="">
+                            Koszyk ({{ $ctrl.getCartSize() }})
+                            <i class="material-icons right">arrow_drop_down</i>
+                        </a>
+                                
+                        <ul id="cart-dropdown-list" class="dropdown-content">
+                            <li ng-repeat="item in $ctrl.cart">
+                                <a href="">
+                                    {{ item.product.name }}
+                                    <span class="badge right">
+                                        {{ item.quantity }}x
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="" ng-click="$ctrl.clearCart()">Wyczyść koszyk</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            `,
+            controller: CartDropdownController
+        })
 }());

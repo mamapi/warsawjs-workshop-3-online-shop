@@ -1,44 +1,33 @@
 (function () {
     'use strict';
 
-    class ProductListComponent {
-        constructor() {
-            this.bindings = {};
-            this.controller = ProductListComponentController;
-        }
-
-        template() {
-            return `
-                <div
-                    class="col s4"
-                    ng-repeat="product in $ctrl.products track by $index">
-                    <product
-                        class="row" 
-                        data-product-index="$index"></product>
-                </div>
-            `;
-        }
-    }
-
     class ProductListComponentController {
         constructor(ProductsService) {
-            // console.debug('new ProductListComponentController');
-            this.products = [];
             this.ProductsService = ProductsService;
         }
 
         $onInit() {
             this.ProductsService.$get()
                 .then(({ data }) => {
-                    this.products = this.products.concat(data);
+                    this.products = data;
                 });
         }
 
         getProductByIndex(index) {
-            return this.products[index];
+            return this.products.find(p => p.id === index);
         }
     }
 
     angular.module('shop')
-        .component('productList', new ProductListComponent);
+        .component('productList', {
+            template: () => `
+                <div class="col s4" ng-repeat="product in $ctrl.products | filter : {name: $ctrl.query} track by product.id">
+                    <product class="row" data-product-index="product.id"></product>
+                </div>
+            `,
+            controller: ProductListComponentController,
+            bindings: {
+                query: '<'
+            }
+        });
 }());

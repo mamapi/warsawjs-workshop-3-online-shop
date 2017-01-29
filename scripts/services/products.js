@@ -2,7 +2,7 @@
     'use strict';
 
     const HOST = window.location.host;
-    const URL = `http://${HOST}:2095/products`;
+    const URL = `http://127.0.0.1:2095/products`;
 
     angular.module('shop')
         .factory('ProductsService', function ($http) {
