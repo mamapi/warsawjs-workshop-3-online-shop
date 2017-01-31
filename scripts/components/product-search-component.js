@@ -31,7 +31,9 @@
                                 <input id="search"
                                        type="search"
                                        placeholder="Wpisz nazwę produktu..."
-                                       ng-model="$ctrl.query" />
+                                       ng-model="$ctrl.query"
+                                       ng-change="$ctrl.onQueryUpdate({$event: {query: $ctrl.query}})"
+                                       ng-model-options="{debounce: 500}" />
                                 <label for="search">
                                     <i class="material-icons">search</i>
                                 </label>
