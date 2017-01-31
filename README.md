@@ -84,8 +84,8 @@ $ npm run start:mock-server
 * [x] Odczytywanie stanu koszyka z `localStorage`
 * [ ] Obsługa błędów w sytuacji problemu z pobraniem listy produktów
 * [ ] Usuwanie produktów z koszyka pojedynczo
-* [ ] Wyszukiwarka produktów
-* [x] Filtrowanie listy produktów
+* [x] Wyszukiwarka produktów
+* [ ] Filtrowanie listy produktów
 * [ ] Paginacja listy produktów
 * [ ] Routing
 

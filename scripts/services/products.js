@@ -9,6 +9,9 @@
             return {
                 $get() {
                     return $http.get(URL);
+                },
+                getByName(name) {
+                    return $http.get(URL, {params: {name}});
                 }
             };
         })
