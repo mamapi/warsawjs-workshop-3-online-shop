@@ -85,9 +85,9 @@ $ npm run start:mock-server
 * [ ] Obsługa błędów w sytuacji problemu z pobraniem listy produktów
 * [ ] Usuwanie produktów z koszyka pojedynczo
 * [x] Wyszukiwarka produktów
-* [ ] Filtrowanie listy produktów
-* [ ] Paginacja listy produktów
-* [ ] Routing
+* [x] Filtrowanie listy produktów
+* [x] Paginacja listy produktów
+* [x] Routing
 
 ## Zadania dodatkowe
 
