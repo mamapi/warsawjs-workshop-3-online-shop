@@ -24,3 +24,8 @@ product-add-to-cart .row,
 product-add-to-cart input[type="text"] {
     margin: 0;
 }
+
+.disabled {
+    pointer-events: none;
+    opacity: .5;
+}
