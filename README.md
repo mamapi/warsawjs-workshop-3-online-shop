@@ -10,10 +10,13 @@
 * step-2 Pierwsze komponenty: header i footer
 * step-3 Serwis produktów
 * step-4 Komponent porduktów
+* step-5 Komponenty listy produktów i produktu
 
-    - Dodanie komopnentu o nazwie `products` w `scripts/components/products-component`.
-    - Aktualizacja routingu.
-    - Aktualizacja komponentu `app`.
+    - Dodanie komopnentu o nazwie `productList` w `scripts/components/product-list-component`.
+    - Aktualizacja komponentu `products`.
+    - Dodanie komopnentu o nazwie `product` w `scripts/components/product-component`.
+    - Komponent `productList` używa wstrzykniętego serwisu `ProductsService` aby pobrać listę produktów;
+        lista produktów jest wykorzystana do wyświetlenia instancji komponentów `product`, do których są przekazywane dane produktu za pośrednictwem atrybutu `data`.
 
 ## Jak uruchomić?
 
