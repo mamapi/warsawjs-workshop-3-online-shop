@@ -4,6 +4,11 @@
 
 ![](http://warsawjs.com/assets/images/logo/logo-transparent-240x240.png)
 
+## Krok po kroku
+
+* step-0 Instalacja i szkielet aplikacji
+
+
 ## Jak uruchomić?
 
 ```
