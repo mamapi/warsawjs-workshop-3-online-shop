@@ -11,12 +11,12 @@
 * step-3 Serwis produktów
 * step-4 Komponent porduktów
 * step-5 Komponenty listy produktów i produktu
+* step-6 Filtr do wyświetlania waluty
 
-    - Dodanie komopnentu o nazwie `productList` w `scripts/components/product-list-component`.
-    - Aktualizacja komponentu `products`.
-    - Dodanie komopnentu o nazwie `product` w `scripts/components/product-component`.
-    - Komponent `productList` używa wstrzykniętego serwisu `ProductsService` aby pobrać listę produktów;
-        lista produktów jest wykorzystana do wyświetlenia instancji komponentów `product`, do których są przekazywane dane produktu za pośrednictwem atrybutu `data`.
+    - Dodanie filtru o nazwie `plnCurrency` w `scripts/filters/pln-currency-filter`.
+    - filtr na weściu przyjmuje liczbę całkowitą lub zmiennoprzecinkową lub string z liczbą.
+    - na wyjściu filtr zwraca string z liczbą w formacie: `"19,00 PLN"`.
+    - wykorzystanie filtru do formatowania ceny w komponencie `product`.
 
 ## Jak uruchomić?
 

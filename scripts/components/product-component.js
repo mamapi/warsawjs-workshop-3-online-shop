@@ -8,7 +8,7 @@
             <div class="card-content white-text">
                 <h6 class="card-title">{{ $ctrl.data.name }}</h6>
                 <p>{{ $ctrl.data.description }}</p>
-                <h5 class="product-price">Cena: {{ $ctrl.data.price }}</h5>
+                <h5 class="product-price">Cena: {{ $ctrl.data.price | plnCurrency }}</h5>
             </div>
         </div>
       `,
