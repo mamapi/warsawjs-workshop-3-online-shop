@@ -13,9 +13,11 @@
 * step-5 Komponenty listy produktów i produktu
 * step-6 Filtr do wyświetlania waluty
 * step-7 Filtrowanie listy produktów po nazwie
+* step-8 Serwis do obsługi local storage
 
-    - do komponentu `productList` należy dodać formularz z elementem `input`.
-    - wykorzystać model powyższego elementu `input` do filtrowania listy produktów.
+    - utworzyć serwis o nazwie `StorageService` w `scripts/services/storage-service.js` o API:
+        + metoda `read(name)` do odczytywania zawartości local storage po kluczu.
+        + metoda `save(name, data)` do zapisywania danych pod kluczem w local storage.
 
 ## Jak uruchomić?
 
