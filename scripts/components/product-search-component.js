@@ -2,16 +2,18 @@
     'use strict';
 
     class ProductSearchController {
-        onSubmit() {
-            this.onQueryUpdate({
-                $event: {
-                    query: this.query
-                }
-            });
+        constructor($state, $stateParams) {
+            this.$state = $state;
+            this.$stateParams = $stateParams;
         }
 
         clearSearch() {
             this.query = '';
+            this.onChange();
+        }
+
+        onChange() {
+            this.$state.go('.', { page: 1, name: this.query }, { notify: false });
 
             this.onQueryUpdate({
                 $event: {
@@ -26,13 +28,13 @@
             template: `
                 <nav class="blue lighten-1">
                     <div class="nav-wrapper">
-                        <form ng-submit="$ctrl.onSubmit()">
+                        <form>
                             <div class="input-field">
                                 <input id="search"
                                        type="search"
                                        placeholder="Wpisz nazwę produktu..."
                                        ng-model="$ctrl.query"
-                                       ng-change="$ctrl.onQueryUpdate({$event: {query: $ctrl.query}})"
+                                       ng-change="$ctrl.onChange()"
                                        ng-model-options="{debounce: 500}" />
                                 <label for="search">
                                     <i class="material-icons">search</i>
@@ -44,6 +46,7 @@
                 </nav>
             `,
             bindings: {
+                query: '<',
                 onQueryUpdate: '&'
             },
             controller: ProductSearchController

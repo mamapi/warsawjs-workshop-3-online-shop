@@ -6,7 +6,6 @@
             this.setQuery({ $event });
         }
     }
-
     angular.module('shop')
         .component('pageHeader', {
             template: `
@@ -19,12 +18,16 @@
                         </div>
                     </nav>
         
-                    <product-search on-query-update="$ctrl.onQueryUpdate($event)"></product-search>
+                    <product-search
+                        query="$ctrl.query"
+                        on-query-update="$ctrl.onQueryUpdate($event)">
+                    </product-search>
                 </header>
             `,
             bindings: {
+                query: '<',
                 setQuery: '&onQueryUpdate'
             },
             controller: PageHeaderComponent
-        })
+        });
 }());

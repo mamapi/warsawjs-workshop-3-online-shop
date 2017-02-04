@@ -3,27 +3,26 @@
 
     class ProductListComponentController {
         constructor($stateParams, ProductsService) {
-            this.currentPage = parseInt($stateParams.page, 10);
+            this.$stateParams = $stateParams;
             this.ProductsService = ProductsService;
             this.PRODUCTS_PER_PAGE = 6;
         }
 
         $onInit() {
-            this.ProductsService.$get({page: this.currentPage})
+            this.ProductsService.$get({
+                page: parseInt(this.$stateParams.page, 10) || 1,
+                name: this.$stateParams.name
+            })
                 .then(data => this._processProducts(data));
         }
 
         $onChanges(changes) {
             if (changes.query && !changes.query.isFirstChange()) {
-                let productsPromise;
-
-                if (changes.query.currentValue) {
-                    productsPromise = this.ProductsService.getByName(changes.query.currentValue);
-                } else {
-                    productsPromise = this.ProductsService.$get();
-                }
-
-                productsPromise.then(data => this._processProducts(data));
+                this.ProductsService.$get({
+                    page: parseInt(this.$stateParams.page, 10) || 1,
+                    name: changes.query.currentValue
+                })
+                    .then(data => this._processProducts(data));
             }
         }
 
@@ -54,7 +53,8 @@
                 <pagination
                     total-items="$ctrl.totalProducts"
                     items-per-page="$ctrl.PRODUCTS_PER_PAGE"
-                    state-name="products">
+                    state-name="products"
+                    query-params="{name: $ctrl.query}">
                 </pagination>
 
                 <div class="col s4" ng-repeat="product in $ctrl.products | filter : {name: $ctrl.nameFilter} track by product.id">

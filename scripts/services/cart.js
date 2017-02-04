@@ -17,7 +17,6 @@
         }
 
         appendCart(product, quantity) {
-            // console.log('CartService#appendCart', product, quantity);
             quantity = parseInt(quantity, 10);
             
             let results = this.cart.find((item) => {

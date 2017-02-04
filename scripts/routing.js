@@ -13,8 +13,8 @@
                 })
                 .state({
                     name: 'products',
-                    url: '/products/:page',
+                    url: '/products/:page?name',
                     template: '<app></app>'
-                })
+                });
         });
 }());

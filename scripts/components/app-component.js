@@ -2,20 +2,24 @@
     'use strict';
 
     class AppComponentController {
-      $onInit() {
-        this.query = '';
-      }
+        constructor($stateParams) {
+            this.$stateParams = $stateParams;
+        }
 
-      setQuery($event) {
-        this.query = $event.query;
-      }
+        $onInit() {
+            this.query = this.$stateParams.name || '';
+        }
+
+        setQuery($event) {
+            this.query = $event.query;
+        }
     }
 
     angular.module('shop')
         .component('app', {
             template: `
                 <section class="container">
-                    <page-header on-query-update="$ctrl.setQuery($event)"></page-header>
+                    <page-header query="$ctrl.query" on-query-update="$ctrl.setQuery($event)"></page-header>
 
                     <product-list class="row" query="$ctrl.query">
                         <div class="progress">
