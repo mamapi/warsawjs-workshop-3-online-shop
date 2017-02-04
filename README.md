@@ -17,12 +17,14 @@
 * step-9 Serwis do komunikacji za pomocą zdarzeń
 * step-10 Serwis do obsługi koszyka
 * step-11 Komponent koszyka
+* step-12 Dodawanie produktu do koszyka
 
-    - utworzyć komponent `cartDropdown` w `scripts/components/cart-dropdown-component.js`
-    - wyświetla ilość elementów w koszyku
-    - w rozwinięciu wyświetla listę produktów w koszku oraz ilością zamówionych sztuk danego produktu
-    - w rozwinięciu wyświetla odnośnik do czyszczenia koszyka
-    - zaktualizować komponent `pageHeader`
+    - dodać komponent `productAddToCart` w `scripts/components/product-add-to-cart-component.js`
+    - komponent używa serwisu `CartService`
+    - komponent jest wykorzystany w komponencie `product`
+    - minimalna ilość sztuk: 1
+    - maksymalna ilość sztuk: 9
+
 
 ## Jak uruchomić?
 

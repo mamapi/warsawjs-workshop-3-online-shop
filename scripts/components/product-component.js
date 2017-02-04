@@ -10,6 +10,9 @@
                 <p>{{ $ctrl.data.description }}</p>
                 <h5 class="product-price">Cena: {{ $ctrl.data.price | plnCurrency }}</h5>
             </div>
+            <div class="card-action">
+                <product-add-to-cart></product-add-to-cart>
+            </div>
         </div>
       `,
       bindings: {
