@@ -6,7 +6,7 @@
 
 ## Krok po kroku
 
-* step-0 Instalacja i szkielet aplikacji
+* step-1 Instalacja i szkielet aplikacji
 
 
 ## Jak uruchomić?
