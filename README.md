@@ -14,10 +14,11 @@
 * step-6 Filtr do wyświetlania waluty
 * step-7 Filtrowanie listy produktów po nazwie
 * step-8 Serwis do obsługi local storage
+* step-9 Serwis do komunikacji za pomocą zdarzeń
 
-    - utworzyć serwis o nazwie `StorageService` w `scripts/services/storage-service.js` o API:
-        + metoda `read(name)` do odczytywania zawartości local storage po kluczu.
-        + metoda `save(name, data)` do zapisywania danych pod kluczem w local storage.
+    - utworzyć serwis o nazwie `EventHubService` w `scripts/services/event-hub-service.js` o API:
+        + metoda `emit(name, payload)` do wywołania zdarzenia z przekazanymi danymi.
+        + metoda `on(name, callback)` do zapisania się na zdarzenie.
 
 ## Jak uruchomić?
 
