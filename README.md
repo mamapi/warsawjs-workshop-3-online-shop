@@ -7,6 +7,7 @@
 ## Krok po kroku
 
 * step-1 Instalacja i szkielet aplikacji
+* step-2 Pierwsze komponenty: header i footer
 
 
 ## Jak uruchomić?
