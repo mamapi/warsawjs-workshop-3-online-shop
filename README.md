@@ -19,12 +19,21 @@
 * step-11 Komponent koszyka
 * step-12 Dodawanie produktu do koszyka
 * step-13 Wyszukiwarka produktów
+* step-14 Stronicowanie produktów
 
-    - dodać komponent `productSearch` w `scripts/components/product-search-component.js`
-    - wykorzystać komponent w komponencie `products`
-    - komponent `products` przetrzymuje zapytanie i przekazuje je jako input (atrybut `query`) komponentów `productSearch` oraz `productList`
-    - komponent `products` przekazuje do komponentu `productSearch` output, który powiadomi `products` o zmianach w zapytaniu (atrybut `on-query-update`)
-    - aktualizacja komponentu `productList` aby uwzględniał input `query`
+    - dodać komponent `pagination` w `scripts/components/pagination-component.js`
+    - wykorzystać komponent w komponencie `productList`
+    - aktualizacja routingu:
+        + stan `products`: `url: '/products/:page?name',`
+        + `otherwise`: `$urlRouterProvider.otherwise('/products/1');`
+
+    - wejścia:
+        + totalItems: '<',
+        + itemsPerPage: '<',
+        + stateName: '@',
+        + queryParams: '<'
+
+    - wywołując przejście do stanu *products*, komponent `pagination` musi uwzględniać dotychczasowe parametry zapytania (wyszukiwanie po nazwie produktu)
 
 
 ## Jak uruchomić?
