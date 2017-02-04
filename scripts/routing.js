@@ -26,7 +26,7 @@
                 .state({
                     parent: 'root',
                     name: 'checkout',
-                    url: 'checkout',
+                    url: '/checkout',
                     views: {
                         content: {
                             template: '<checkout></checkout>'

@@ -12,7 +12,7 @@
                 <header>
                     <nav class="blue lighten-3">
                         <div class="nav-wrapper">
-                            <a class="brand-logo">Sklep internetowy</a>
+                            <a ui-sref="products" class="brand-logo">Sklep internetowy</a>
                             <cart-dropdown></cart-dropdown>
                         </div>
                     </nav>

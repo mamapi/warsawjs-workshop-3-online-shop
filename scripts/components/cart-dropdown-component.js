@@ -46,7 +46,7 @@
                             <li>
                                 <a href="" ng-click="$ctrl.clearCart()">Wyczyść koszyk</a>
                             </li>
-                            <li>
+                            <li ng-show="$ctrl.getCartSize() > 0">
                                 <a ui-sref="checkout">Kasa</a>
                             </li>
                         </ul>

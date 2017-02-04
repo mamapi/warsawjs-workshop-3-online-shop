@@ -21,7 +21,7 @@
             return this.cart.length;
         }
 
-        appendCart(product, quantity) {
+        add(product, quantity) {
             quantity = parseInt(quantity, 10);
             
             let results = this.cart.find((item) => {
@@ -36,6 +36,14 @@
                     product
                 });
             }
+
+            this._update();
+        }
+
+        remove(product) {
+            this.cart = this.cart.filter(item => {
+                return item.product.id !== product.id;
+            });
 
             this._update();
         }

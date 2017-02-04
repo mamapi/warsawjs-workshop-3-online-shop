@@ -30,5 +30,5 @@
                 </product-list>
             `,
             controller: ProductsComponentController
-        })
+        });
 }());

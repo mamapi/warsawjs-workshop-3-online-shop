@@ -44,3 +44,31 @@ product-add-to-cart input[type="text"] {
 .card.small .card-content .product-price {
     align-self: flex-end;
 }
+
+.checkout__no-data {
+    margin: 3em;
+    text-align: center;
+    color: #ccc;
+    font-size: 1.5em;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.order-summary {
+    margin-top: 2em;
+}
+
+.order-summary__total {
+    text-align: right;
+}
+
+.order-summary__pay-btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2em;
+}
+
+.footer {
+    color: #ccc;
+}

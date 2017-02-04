@@ -18,7 +18,7 @@
         }
 
         onSubmit() {
-            this.CartService.appendCart(this.parent.data, this.quantity);
+            this.CartService.add(this.parent.data, this.quantity);
         }
     }
 
