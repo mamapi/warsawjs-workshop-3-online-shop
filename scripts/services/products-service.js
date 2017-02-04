@@ -12,8 +12,6 @@
         }
 
         $get({ page, name }) {
-            // const page = (options && options.page) || 1;
-
             let params = {};
 
             if (page) {
@@ -26,17 +24,6 @@
             }
             
             return this.$http.get(URL, { params });
-        }
-
-        getByName(name, options) {
-            const page = (options && options.page) || 1;
-            return this.$http.get(URL, {
-                params: {
-                    name_like: name,
-                    _page: page,
-                    _limit: PRODUCTS_PER_PAGE
-                }
-            });
         }
     }
 

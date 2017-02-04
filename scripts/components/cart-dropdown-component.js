@@ -4,10 +4,13 @@
     class CartDropdownController {
         constructor(CartService) {
             this.CartService = CartService;
-            this.cart = CartService.getCart();
+        }
 
-            CartService.onUpdate(() => {
-                this.cart = CartService.getCart();
+        $onInit() {
+            this.cart = this.CartService.getCart();
+
+            this.CartService.onUpdate(cart => {
+                this.cart = cart;
             });
         }
 
