@@ -7,7 +7,7 @@
         <section class="container">
           <page-header></page-header>
 
-          <h1>App</h1>
+          <div ui-view="content"></div>
 
           <page-footer></page-footer>
         </section>
