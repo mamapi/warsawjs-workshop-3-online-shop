@@ -1,7 +1,7 @@
 (function () {
-    'use strict';
+  'use strict';
 
-    window.addEventListener('DOMContentLoaded', () => {
-        angular.bootstrap(document.body, ['shop']);
-    });
+  window.addEventListener('DOMContentLoaded', () => {
+    angular.bootstrap(document.body, ['shop']);
+  });
 }());

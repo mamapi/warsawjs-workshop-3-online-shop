@@ -1,16 +1,16 @@
-(function () {
-    'use strict';
+(function() {
+  'use strict';
 
-    angular.module('shop')
-        .component('app', {
-            template: `
-                <section class="container">
-                    <page-header></page-header>
+  angular.module('shop')
+    .component('app', {
+      template: `
+        <section class="container">
+          <page-header></page-header>
 
-                    <div ui-view="content"></div>
+          <div ui-view="content"></div>
 
-                    <page-footer></page-footer>
-                </section>
-            `
-        })
+          <page-footer></page-footer>
+        </section>
+      `
+    })
 }());
