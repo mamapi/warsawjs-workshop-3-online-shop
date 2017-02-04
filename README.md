@@ -18,12 +18,13 @@
 * step-10 Serwis do obsługi koszyka
 * step-11 Komponent koszyka
 * step-12 Dodawanie produktu do koszyka
+* step-13 Wyszukiwarka produktów
 
-    - dodać komponent `productAddToCart` w `scripts/components/product-add-to-cart-component.js`
-    - komponent używa serwisu `CartService`
-    - komponent jest wykorzystany w komponencie `product`
-    - minimalna ilość sztuk: 1
-    - maksymalna ilość sztuk: 9
+    - dodać komponent `productSearch` w `scripts/components/product-search-component.js`
+    - wykorzystać komponent w komponencie `products`
+    - komponent `products` przetrzymuje zapytanie i przekazuje je jako input (atrybut `query`) komponentów `productSearch` oraz `productList`
+    - komponent `products` przekazuje do komponentu `productSearch` output, który powiadomi `products` o zmianach w zapytaniu (atrybut `on-query-update`)
+    - aktualizacja komponentu `productList` aby uwzględniał input `query`
 
 
 ## Jak uruchomić?

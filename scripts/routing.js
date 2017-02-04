@@ -12,7 +12,7 @@
         .state({
           parent: 'root',
           name: 'products',
-          url: '/products',
+          url: '/products?name',
           views: {
             content: {
               template: `
