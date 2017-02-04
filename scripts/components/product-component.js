@@ -14,6 +14,7 @@
                     <div class="card-content white-text">
                         <h6 class="card-title">{{ $ctrl.product.name }}</h6>
                         <p>{{ $ctrl.product.description }}</p>
+                        <h5 class="product-price">Cena: {{ $ctrl.product.price }}</h5>
                     </div>
                     <div class="card-action">
                         <product-add-to-cart></product-add-to-cart>

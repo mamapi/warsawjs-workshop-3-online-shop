@@ -14,7 +14,8 @@
                     "id",
                     "name",
                     "description",
-                    "image"
+                    "image",
+                    "price"
                 ],
                 "properties": {
                     "id": {
@@ -39,6 +40,12 @@
                                 "protocol": "https",
                                 "fileExtension": "jpg"
                             }
+                        }
+                    },
+                    "price": {
+                        "type": "string",
+                        "faker": {
+                            "finance.amount": [1, 1000, 2]
                         }
                     }
                 }
