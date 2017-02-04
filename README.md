@@ -15,10 +15,16 @@
 * step-7 Filtrowanie listy produktów po nazwie
 * step-8 Serwis do obsługi local storage
 * step-9 Serwis do komunikacji za pomocą zdarzeń
+* step-10 Serwis do obsługi koszyka
 
-    - utworzyć serwis o nazwie `EventHubService` w `scripts/services/event-hub-service.js` o API:
-        + metoda `emit(name, payload)` do wywołania zdarzenia z przekazanymi danymi.
-        + metoda `on(name, callback)` do zapisania się na zdarzenie.
+    - serwis korzysta z serwisu `StorageService` oraz `EventHubService`
+    - utworzyć serwis o nazwie `CartService` w `scripts/services/cart-service.js` o API:
+        + metoda `getCart()` - zwraca całą zawartość koszyka
+        + metoda `getCartSize()` - zwraca liczbę elementów w koszyku
+        + metoda `add(product, quantity)` - dodawanie produktu do koszyka
+        + metoda `remove(product)` - usuwanie produktu z koszyka
+        + metoda `onUpdate(callback)` - przekazany `callback` zostanie wywołany, gdy zmieni się zawartość koszyka
+        + metoda `clearCart(callback)` - usuwanie całej zawartości koszyka
 
 ## Jak uruchomić?
 
