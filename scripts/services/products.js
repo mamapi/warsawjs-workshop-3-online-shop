@@ -1,31 +1,37 @@
 (function (window) {
     'use strict';
 
-    const HOST = window.location.host;
-    const URL = `http://127.0.0.1:2095/products`;
+    const HOST_NAME = window.location.hostname;
+    const PORT = 2095
+    const URL = `http://${HOST_NAME}:${PORT}/products`;
+
+    class ProductsService {
+        constructor($http) {
+            this.$http = $http;
+        }
+
+        $get(options) {
+            const page = (options && options.page) || 1;
+            return this.$http.get(URL, {
+                params: {
+                    _page: page,
+                    _limit: 6
+                }
+            });
+        }
+
+        getByName(name, options) {
+            const page = (options && options.page) || 1;
+            return this.$http.get(URL, {
+                params: {
+                    name_like: name,
+                    _page: page,
+                    _limit: 6
+                }
+            });
+        }
+    }
 
     angular.module('shop')
-        .factory('ProductsService', function ($http) {
-            return {
-                $get(options) {
-                    const page = (options && options.page) || 1;
-                    return $http.get(URL, {
-                        params: {
-                            _page: page,
-                            _limit: 6
-                        }
-                    });
-                },
-                getByName(name, options) {
-                    const page = (options && options.page) || 1;
-                    return $http.get(URL, {
-                        params: {
-                            name_like: name,
-                            _page: page,
-                            _limit: 6
-                        }
-                    });
-                }
-            };
-        })
+        .service('ProductsService', ProductsService);
 }(window));
