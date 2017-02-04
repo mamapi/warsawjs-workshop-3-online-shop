@@ -1,20 +1,14 @@
 (function () {
     'use strict';
 
-    class ProductComponentController {
-        $onInit() {
-            this.product = this.productList.getProductByIndex(this.productIndex);
-        }
-    }
-
     angular.module('shop')
         .component('product', {
             template: `
                 <div class="card small blue-grey darken-1">
                     <div class="card-content white-text">
-                        <h6 class="card-title">{{ $ctrl.product.name }}</h6>
-                        <p>{{ $ctrl.product.description }}</p>
-                        <h5 class="product-price">Cena: {{ $ctrl.product.price }}</h5>
+                        <h6 class="card-title">{{ $ctrl.data.name }}</h6>
+                        <p>{{ $ctrl.data.description }}</p>
+                        <h5 class="product-price">Cena: {{ $ctrl.data.price | plnCurrency }}</h5>
                     </div>
                     <div class="card-action">
                         <product-add-to-cart></product-add-to-cart>
@@ -22,11 +16,10 @@
                 </div>
             `,
             bindings: {
-                productIndex: '='
+                data: '<',
             },
             require: {
                 productList: '^^'
-            },
-            controller: ProductComponentController
+            }
         });
 }());

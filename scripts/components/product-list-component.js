@@ -2,7 +2,8 @@
     'use strict';
 
     class ProductListComponentController {
-        constructor($stateParams, ProductsService) {
+        constructor($filter, $stateParams, ProductsService) {
+            this.$filter = $filter;
             this.$stateParams = $stateParams;
             this.ProductsService = ProductsService;
             this.PRODUCTS_PER_PAGE = 6;
@@ -24,10 +25,6 @@
                 })
                     .then(data => this._processProducts(data));
             }
-        }
-
-        getProductByIndex(index) {
-            return this.products.find(p => p.id === index);
         }
 
         _processProducts({ data, headers}) {
@@ -58,7 +55,7 @@
                 </pagination>
 
                 <div class="col s4" ng-repeat="product in $ctrl.products | filter : {name: $ctrl.nameFilter} track by product.id">
-                    <product class="row" data-product-index="product.id"></product>
+                    <product class="row" data="product"></product>
                 </div>
             `,
             controller: ProductListComponentController,

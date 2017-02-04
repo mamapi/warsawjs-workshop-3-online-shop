@@ -7,7 +7,7 @@
             this.CartService = CartService;
         }
 
-        onBlurHandler() {
+        onBlur() {
             if (this.quantity > 9) {
                 this.quantity = 9;
             }
@@ -17,22 +17,22 @@
             }
         }
 
-        onSubmitHandler() {
-            this.CartService.appendCart(this.parent.product, this.quantity);
+        onSubmit() {
+            this.CartService.appendCart(this.parent.data, this.quantity);
         }
     }
 
     angular.module('shop')
         .component('productAddToCart', {
             template: `
-                <form class="row" ng-submit="$ctrl.onSubmitHandler()">
+                <form class="row" ng-submit="$ctrl.onSubmit()">
                     <input type="submit" class="col s8 left btn white-text" value="Do koszyka" />
                     <input type="text"
                         max="9"
-                        min="0"
+                        min="1"
                         class="col s3 right blue-grey lighten-5 black center-align"
                         ng-model="$ctrl.quantity"
-                        ng-blur="$ctrl.onBlurHandler()"
+                        ng-blur="$ctrl.onBlur()"
                         required />
                 </form>
             `,
