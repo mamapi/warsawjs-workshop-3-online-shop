@@ -16,15 +16,13 @@
 * step-8 Serwis do obsługi local storage
 * step-9 Serwis do komunikacji za pomocą zdarzeń
 * step-10 Serwis do obsługi koszyka
+* step-11 Komponent koszyka
 
-    - serwis korzysta z serwisu `StorageService` oraz `EventHubService`
-    - utworzyć serwis o nazwie `CartService` w `scripts/services/cart-service.js` o API:
-        + metoda `getCart()` - zwraca całą zawartość koszyka
-        + metoda `getCartSize()` - zwraca liczbę elementów w koszyku
-        + metoda `add(product, quantity)` - dodawanie produktu do koszyka
-        + metoda `remove(product)` - usuwanie produktu z koszyka
-        + metoda `onUpdate(callback)` - przekazany `callback` zostanie wywołany, gdy zmieni się zawartość koszyka
-        + metoda `clearCart(callback)` - usuwanie całej zawartości koszyka
+    - utworzyć komponent `cartDropdown` w `scripts/components/cart-dropdown-component.js`
+    - wyświetla ilość elementów w koszyku
+    - w rozwinięciu wyświetla listę produktów w koszku oraz ilością zamówionych sztuk danego produktu
+    - w rozwinięciu wyświetla odnośnik do czyszczenia koszyka
+    - zaktualizować komponent `pageHeader`
 
 ## Jak uruchomić?
 
