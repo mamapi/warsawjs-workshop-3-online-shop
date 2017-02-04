@@ -12,11 +12,10 @@
 * step-4 Komponent porduktów
 * step-5 Komponenty listy produktów i produktu
 * step-6 Filtr do wyświetlania waluty
+* step-7 Filtrowanie listy produktów po nazwie
 
-    - Dodanie filtru o nazwie `plnCurrency` w `scripts/filters/pln-currency-filter`.
-    - filtr na weściu przyjmuje liczbę całkowitą lub zmiennoprzecinkową lub string z liczbą.
-    - na wyjściu filtr zwraca string z liczbą w formacie: `"19,00 PLN"`.
-    - wykorzystanie filtru do formatowania ceny w komponencie `product`.
+    - do komponentu `productList` należy dodać formularz z elementem `input`.
+    - wykorzystać model powyższego elementu `input` do filtrowania listy produktów.
 
 ## Jak uruchomić?
 
