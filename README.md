@@ -20,21 +20,19 @@
 * step-12 Dodawanie produktu do koszyka
 * step-13 Wyszukiwarka produktów
 * step-14 Stronicowanie produktów
+* step-15 Kasa
 
-    - dodać komponent `pagination` w `scripts/components/pagination-component.js`
-    - wykorzystać komponent w komponencie `productList`
-    - aktualizacja routingu:
-        + stan `products`: `url: '/products/:page?name',`
-        + `otherwise`: `$urlRouterProvider.otherwise('/products/1');`
-
-    - wejścia:
-        + totalItems: '<',
-        + itemsPerPage: '<',
-        + stateName: '@',
-        + queryParams: '<'
-
-    - wywołując przejście do stanu *products*, komponent `pagination` musi uwzględniać dotychczasowe parametry zapytania (wyszukiwanie po nazwie produktu)
-
+    - dodać komponent `checkout` w `scripts/components/checkout-component.js`;
+    - wykorzystać serwis `CartService` do pobrania zawartości koszyka;
+    - komponent powinien wyświetlać podsumowanie zamówienia zawierające:
+        + nazwę produktu,
+        + ilość ilość zamówionego produktu,
+        + cenę jednej sztuki produktu,
+        + cenę wszystkich sztuk produktu,
+        + przycisk umożliwiający usunięcie produktu z koszyka,
+        + całkowitą wartość zamówienia
+    - dodać w routingu stan prowadzący do kasy;
+    - w komponencie `pageHeader` dodać link umożliwiający powrót do listy produktuów;
 
 ## Jak uruchomić?
 

@@ -20,6 +20,16 @@
               `
             }
           }
+        })
+        .state({
+          parent: 'root',
+          name: 'checkout',
+          url: '/checkout',
+          views: {
+            content: {
+              template: '<checkout></checkout>'
+            }
+          }
         });
 
       $urlRouterProvider.otherwise('/products/1');
