@@ -1,4 +1,4 @@
-# warsawjs-workshop-3-shop-online
+# warsawjs-workshop-3-online-shop
 
 > Aplikacja testowa stworzona na potrzeby WarsawJS Workshop #3
 
