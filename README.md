@@ -1,6 +1,6 @@
 # warsawjs-workshop-3-online-shop
 
-> Aplikacja testowa stworzona na potrzeby WarsawJS Workshop #3
+> Aplikacja testowa stworzona w ramach warsztatów WarsawJS Workshop #3
 
 ![](http://warsawjs.com/assets/images/logo/logo-transparent-240x240.png)
 
